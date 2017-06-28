@@ -1,0 +1,313 @@
+::-moz-selection, ::selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+.post-content {
+	font-size: 1em;
+	line-height: 2em;
+}
+.post-content:after {
+	clear: both;
+	content: '';
+	display: table;
+}
+.post-content a {
+	color: inherit;
+	text-decoration: none;
+	font-weight: 400;
+	-webkit-transition: all ease-out 0.2s;
+	transition: all ease-out 0.2s;
+}
+.post-content a:hover,
+.post-content a:focus {
+	color: #000;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.025em;
+	text-rendering: optimizeLegibility;
+	color: #000;
+}
+.post-content h1 {
+	font-size: 2em;
+	line-height: 1em;
+	text-indent: -1px;
+	margin: 2em 0 -0.5em;
+}
+.post-content h2 {
+	font-size: 1.75em;
+	line-height: 1.111em;
+	text-indent: -1px;
+	margin: 2.286em 0 -0.571em;
+}
+.post-content h3 {
+	font-size: 1.5em;
+	line-height: 1.333em;
+	margin: 2em 0 -0.666em;
+}
+.post-content h4 {
+	font-size: 1.25em;
+	line-height: 1.2em;
+	margin: 2.4em 0 -0.8em;
+}
+.post-content h1 a,
+.post-content h2 a,
+.post-content h3 a,
+.post-content h4 a,
+.post-content h5 a,
+.post-content h6 a {
+	font-weight: inherit;
+}
+.post-content p,
+.post-content ul,
+.post-content ol {
+    margin: 2em 0;
+}
+.post-content ul {
+	list-style: none;
+}
+.post-content li {
+	position: relative;
+}
+.post-content ul > li:before,
+.post-content ol > li:before {
+	position: absolute;
+	width: 1em;
+	margin-left: -2em;
+	font-size: 1em;
+	font-weight: 500;
+	line-height: 1.5em;
+	text-align: right;
+	color: #000;
+}
+.post-content ul > li:before {
+	margin-top: 0.25em;
+	content: '•';
+}
+.post-content ol {
+	list-style-type: none;
+	counter-reset: item;
+}
+.post-content ol > li:before {
+	content: counter(item) ". " !important;
+	counter-increment: item;
+}
+.post-content ol ol,
+.post-content ul ul,
+.post-content ul ol,
+.post-content ol ul {
+	padding-left: 30px;
+	margin: 15px 0;
+}
+.post-content hr {
+    display: block;
+    height: 1px;
+    margin: 2em 0;
+    padding: 0;
+	background: #e5e5e5;
+    border: 0;
+}
+.post-content blockquote {
+    margin: 2em 0;
+    padding: 1em;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 0.25em solid #e5e5e5;
+    font-style: italic;
+    font-weight: 400;
+    color: #807e79;
+    background: #f2f2f2;
+}
+.post-content blockquote p {
+	margin: 1em auto;
+}
+.post-content blockquote p:first-child {
+	margin-top: 0;
+}
+.post-content blockquote p:last-child {
+	margin-bottom: 0;
+}
+.post-content em,
+.post-content i {
+	font-style: italic;
+	color: #262626;
+}
+.post-content strong,
+.post-content b {
+	font-weight: 700;
+	color: #262626;
+}
+.post-content small {
+    font-size: 0.9em;
+    color: #45484d;
+}
+.post-content dl {
+    margin: 20px 0;
+}
+.post-content dl dt {
+    float: left;
+    width: 180px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.post-content dl dd {
+    margin-left: 200px;
+    margin-bottom: 12px;
+}
+.post-content mark {
+    background-color: #ffc336;
+}
+.post-content code,
+.post-content tt {
+	position: relative;
+	margin: 0 0.333em;
+	padding: 0.333em 0.666em;
+	font-family: monospace, sans-serif;
+	font-size: 0.75em;
+	white-space: pre;
+	background: #faf9f7;
+    border: 1px solid #ebe9e6;
+	top: -2px;
+}
+.post-content pre {
+	position: relative;
+	margin: 2em 0;
+	padding: 1em;
+	overflow: hidden;
+	font-family: monospace, sans-serif;
+	white-space: pre;
+	background: #f7f7f7;
+    border: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.post-content pre code,
+.post-content pre tt {
+	position: static;
+	top: auto;
+	margin: -1.333em -1.333em -1.333em 1.333em;
+	padding: 1.333em;
+	overflow: scroll;
+	font-size: 0.75em;
+	line-height: 2em;
+	white-space: pre;
+	background: transparent;
+	border: none;
+	vertical-align: inherit;
+}
+.post-content kbd {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    padding: 1px 8px;
+    border: #ccc 1px solid;
+    color: #666;
+    text-shadow: #fff 0 1px 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    background: #f4f4f4;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
+}
+.post-content table {
+	width: 100%;
+	max-width: 100%;
+	margin: 2em 0;
+	background-color: transparent;
+	border: 1px solid #e5e5e5;
+}
+.post-content table th,
+.post-content table td {
+    position: relative;
+    padding: 0.5em;
+    line-height: 0.95em;
+    text-align: left;
+    border: 1px solid #e5e5e5;
+}
+.post-content table th {
+	font-weight: 600;
+	font-size: 0.75em;
+	line-height: 1.25em;
+	padding: 0.666em;
+	color: #000;
+}
+.post-content table td:after {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: -1px;
+	top: -1px;
+	padding: 1px;
+	z-index: -1;
+	content: '';
+	background: #f2f2f2;
+}
+.post-content img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.post-content input[type="text"],
+.post-content input[type="email"],
+.post-content textarea {
+	font-size: 1em;
+	width: 100%;
+	padding: 0.667em;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	appearance: normal;
+	-webkit-transition: all ease-out 0.2s;
+	transition: all ease-out 0.2s;
+	outline: none;
+	box-shadow: inset 0 0 0 1px transparent;
+}
+.post-content input[type="text"]:hover,
+.post-content input[type="email"]:hover,
+.post-content textarea:hover {
+	border-color: #666;
+}
+.post-content input[type="text"]:focus,
+.post-content input[type="email"]:focus,
+.post-content textarea:focus {
+	border-color: #333;
+	box-shadow: inset 0 0 0 1px #333;
+}
+.post-content input[type="submit"],
+.post-content input[type="button"],
+.post-content button {
+	font-size: 1em;
+	width: 100%;
+	font-weight: 600;
+	color: #eee;
+	padding: 0.667em;
+	background: #333;
+	border: 0;
+	border-radius: 2px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	appearance: normal;
+	-webkit-transition: all ease-out 0.2s;
+	transition: all ease-out 0.2s;
+}
+.post-content input[type="submit"]:hover,
+.post-content input[type="submit"]:focus,
+.post-content input[type="button"]:hover,
+.post-content input[type="button"]:focus,
+.post-content button:hover,
+.post-content button:focus {
+	background: #000;
+	color: #fff;
+}
