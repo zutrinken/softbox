@@ -1,4 +1,4 @@
-/*  
+/*
 	Theme Name: Softbox
 	Theme URI: http://github.com/zutrinken/softbox
 	Author: Peter Amende
@@ -21,6 +21,7 @@
 html {
 	height: 100%;
 }
+
 body {
 	height: 100%;
 	padding: 0;
@@ -34,26 +35,45 @@ textarea {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1em;
 	line-height: 1.5em;
-	
+
 	font-weight: 300;
 	color: #666;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
-input[type="text"],
-input[type="email"],
-textarea {
-	width: 100%;
-	padding: 8px;
-	border: 1px solid #ccc;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+
+.inside {
+	max-width: 40em;
+	padding: 2em;
+	margin: auto;
 }
 
+.single .inside {
+	width: auto;
+	padding: 0;
+}
+
+.swiper-container {
+	height: 100vh;
+}
+
+.swiper-slide {
+	width: 33.334vh;
+}
+
+.swiper-pagination-bullet {
+	border-radius: 1px;
+	width: 6px;
+	height: 9px;
+}
+
+.swiper-pagination-bullet-active {
+	background: #000;
+}
 
 /*
 	--------------------------------------------------------------------------------
-		Main
+		Header
 	--------------------------------------------------------------------------------
 */
 
@@ -64,6 +84,7 @@ textarea {
 	padding: 0;
 	z-index: 20;
 }
+
 #header:after {
 	clear: both;
 	content: '';
@@ -78,11 +99,13 @@ textarea {
 	text-decoration: none;
 	font-family: 'Montserrat', sans-serif;
 }
+
 .blog-title:after {
 	clear: both;
 	content: '';
 	display: table;
 }
+
 .blog-title .blog-logo {
 	display: block;
 	float: left;
@@ -91,6 +114,7 @@ textarea {
 	padding: 0;
 	margin: -0.25em 0.5em -0.25em -0.25em;
 }
+
 .blog-title .blog-name {
 	margin: 0;
 	padding: 0;
@@ -104,6 +128,7 @@ textarea {
 	color: #000;
 	white-space: nowrap;
 }
+
 .blog-title .blog-description {
 	display: block;
 	margin: 0;
@@ -116,20 +141,80 @@ textarea {
 	white-space: nowrap;
 }
 
+/*
+	--------------------------------------------------------------------------------
+		Navigation
+	--------------------------------------------------------------------------------
+*/
+
 .navigation {
 	display: block;
 	margin: 0;
 	padding: 1em;
 	float: right;
 }
+
+@media only screen and (max-width: 960px) {
+
+	.navigation {
+		float: right;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+
+	.navigation {
+		padding: 1em 0;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+
+	.navigation > div {
+		position: fixed;
+		width: 100%;
+		height: auto;
+		padding-top: 4em;
+		margin-top: -4em;
+		left: 0;
+		top: -100%;
+		background: #fff;
+		box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+		overflow: hidden;
+		z-index: 40;
+		box-sizing: border-box;
+		transition: all 0.666s cubic-bezier(0.2, 1.5, 0.5, 1);
+	}
+
+	.menu-active .navigation > div {
+		top: 0;
+	}
+}
+
 .navigation ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
+
+@media only screen and (max-width: 960px) {
+
+	.navigation ul {
+		padding: 32px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+
+	.navigation ul {
+		padding: 1em;
+	}
+}
+
 .navigation ul ul {
 	padding: 0 0 0 1em;
 }
+
 .navigation li {
 	position: relative;
 	list-style: none;
@@ -138,9 +223,19 @@ textarea {
 	float: left;
 	margin-right: 2em;
 }
+
+@media only screen and (max-width: 960px) {
+
+	.navigation li {
+		padding: 4px 0;
+		float: none;
+	}
+}
+
 .navigation li:last-child {
 	margin-right: 1em;
 }
+
 .navigation a {
 	display: block;
 	padding: 2px 0;
@@ -151,14 +246,17 @@ textarea {
 	text-decoration: none;
 	transition: all 0.1s linear;
 }
+
 .navigation a:hover,
 .navigation a:focus {
 	color: #000;
 }
+
 .navigation .current-menu-item > a {
 	font-weight: 700;
 	color: #000;
 }
+
 #menu-handler {
 	display: none;
 	position: absolute;
@@ -176,6 +274,22 @@ textarea {
 	box-sizing: border-box;
 	z-index: 50;
 }
+
+@media only screen and (max-width: 960px) {
+
+	#menu-handler {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+
+	#menu-handler {
+		margin: 1em;
+	}
+}
+
+
 .nav-button {
 	display: block;
 	position: relative;
@@ -183,6 +297,7 @@ textarea {
 	height: 24px;
 	cursor: pointer;
 }
+
 .nav-button-part {
 	display: block;
 	position: absolute;
@@ -190,17 +305,16 @@ textarea {
 	height: 2px;
 	top: 50%;
 	background: #000;
-  
+
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 
 	-webkit-transition: all ease 0.3s;
 	transition: all ease 0.3s;
 }
-.nav-button:hover .nav-button-part ,
-.nav-button:focus .nav-button-part {
 
-}
+.nav-button:hover .nav-button-part ,
+.nav-button:focus .nav-button-part {}
 
 .nav-button-part-1 {
 	margin-top: -8px;
@@ -235,7 +349,7 @@ textarea {
 	margin-top: -1px;
 }
 .menu-active .nav-button-part-2 {
-    display: none;
+	display: none;
 }
 .menu-active .nav-button-part-3 {
 	margin-top: -1px;
@@ -247,34 +361,6 @@ textarea {
 	margin-top: -1px;
 }
 
-.inside {
-	max-width: 40em;
-	padding: 2em;
-	margin: auto;
-}
-.single .inside {
-	width: auto;
-	padding: 0;
-}
-
-.swiper-container {
-	height: 100vh;
-}
-.swiper-slide {
-	width: 33.334vh;
-}
-
-.swiper-pagination-bullet {
-	border-radius: 1px;
-	width: 6px;
-	height: 9px;
-}
-
-.swiper-pagination-bullet-active {
-	background: #000;
-}
-
-
 /*
 	--------------------------------------------------------------------------------
 		Index
@@ -284,8 +370,8 @@ textarea {
 #index {
 	height: 100vh;
 	box-sizing: border-box;
-    white-space: nowrap;
-    overflow-x: hidden;
+	white-space: nowrap;
+	overflow-x: hidden;
 }
 
 #index .hentry {
@@ -312,11 +398,13 @@ textarea {
 	transition: all 0.666s cubic-bezier(0.2, 1.5, 0.5, 1);
 	border-radius: 3px;
 }
+
 #index .hentry:hover .post-image,
 #index .hentry:focus .post-image {
 	box-shadow: 0 2em 4em rgba(0,0,0,0.4);
 	transform: scale(1.1);
 }
+
 #index .post-link {
 	position: absolute;
 	top: 0;
@@ -325,6 +413,7 @@ textarea {
 	height: 100%;
 	z-index: 20;
 }
+
 #index .post-title {
 	position: absolute;
 	display: block;
@@ -344,15 +433,16 @@ textarea {
 	overflow: hidden;
 	z-index: 10;
 	text-align: center;
-	
+
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	
+
 	transition: all 0.666s cubic-bezier(0.2, 1.5, 0.5, 1);
-	
+
 	transform-style: preserve-3d;
 	transform: translate3d(0,0,0);
 }
+
 #index .hentry:hover .post-title,
 #index .hentry:focus .post-title {
 	color: rgba(0,0,0,1);
@@ -368,13 +458,14 @@ textarea {
 .hentry {
 	position: relative;
 }
+
 .page .hentry {
 	padding-top: 8em;
 	padding-bottom: 4em;
 }
-.post-header {
-	
-}
+
+.post-header {}
+
 .single .post-header {
 	position: absolute;
 	top: 3em;
@@ -385,6 +476,7 @@ textarea {
 	box-sizing: border-box;
 	text-align: center;
 }
+
 .post-close {
 	display: block;
 	position: relative;
@@ -392,6 +484,7 @@ textarea {
 	height: 2em;
 	float: right;
 }
+
 .post-close:after,
 .post-close:before {
 	content: '';
@@ -404,9 +497,11 @@ textarea {
 	background: #000;
 	transform: rotate(45deg);
 }
+
 .post-close:before {
 	transform: rotate(-45deg);
 }
+
 .post-title {
 	margin: 0;
 	padding: 0;
@@ -418,10 +513,12 @@ textarea {
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 0.025em;
 }
+
 .post-title a {
 	color: inherit;
 	text-decoration: none;
 }
+
 .post-image {
 	width: auto;
 	height: 0;
@@ -430,65 +527,17 @@ textarea {
 	overflow: hidden;
 	background: #333;
 }
+
 .post-image img {
 	display: block;
 	width: 100%;
 	height: auto;
 }
+
 .post-content {
 	position: relative;
 	z-index: 10;
 }
-
-
-@media only screen and (max-width: 960px) {
-	.navigation {
-		float: right;
-	}
-	.navigation > div {
-		position: fixed;
-		width: 100%;
-		height: auto;
-		padding-top: 4em;
-		margin-top: -4em;
-		left: 0;
-		top: -100%;
-		background: #fff;
-		box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
-		overflow: hidden;
-		z-index: 40;
-		box-sizing: border-box;
-		transition: all 0.666s cubic-bezier(0.2, 1.5, 0.5, 1);
-	}
-	.menu-active .navigation > div {
-		top: 0;
-	}
-	.navigation ul {
-		padding: 32px;
-	}
-	.navigation li {
-		padding: 4px 0;
-		float: none;
-	}
-	#menu-handler {
-		display: block;
-	}
-}
-@media only screen and (max-width: 480px) {
-	.navigation {
-		padding: 1em 0;
-	}
-	.navigation ul {
-		padding: 1em;
-	}
-	#menu-handler {
-		margin: 1em;
-	}
-}
-
-
-
-
 
 /*
 	--------------------------------------------------------------------------------
@@ -496,26 +545,29 @@ textarea {
 	--------------------------------------------------------------------------------
 */
 
-
-
-
-
-	/* ------------------------------ Alignments */
+.wp-smiley {
+	display: inline;
+	margin: 0 0.4em;
+	vertical-align: sub;
+}
 
 .alignnone {
 	display: block;
 	margin: 2em auto;
 }
+
 .aligncenter {
 	display: block;
 	margin: 2em auto;
 }
+
 .alignleft {
 	display: block;
 	float: left;
 	margin-right: 2em;
 	margin-bottom: 2em;
 }
+
 .alignright {
 	display: block;
 	float: right;
@@ -545,12 +597,54 @@ textarea {
 	max-width: 50%;
 }
 
-
 .size-full {}
 .size-full.aligncenter {}
 .size-full.alignleft,
 .size-full.alignright {
 	max-width: 50%;
+}
+
+@media only screen and (max-width: 960px) {
+
+	.size-full.aligncenter,
+	.size-full.alignleft,
+	.size-full.alignright {
+		width: 220%;
+		margin-left: -60%;
+	}
+
+	.size-full.alignleft {
+		margin-left: -90%;
+	}
+
+	.size-full.alignright {
+		margin-right: -30%;
+	}
+}
+
+
+@media only screen and (max-width: 480px) {
+
+	.alignnone,
+	.aligncenter,
+	.alignleft,
+	.alignright,
+	.size-thumbnail,
+	.size-small,
+	.size-medium,
+	.size-large,
+	.size-full {
+		float: none;
+		margin: 2em auto !important;
+		max-width: 100% !important;
+	}
+
+	.alignnone img,
+	.aligncenter img,
+	.alignleft img,
+	.alignright img {
+		margin: auto !important;
+	}
 }
 
 	/* ------------------------------ Caption */
@@ -562,6 +656,7 @@ textarea {
 	line-height: 1.2em;
 	margin-top: 16px;
 }
+
 .wp-caption .wp-caption-text {
 	display: block;
 	margin: 0.8em 0;
@@ -569,18 +664,16 @@ textarea {
 	color: #b6babf;
 	text-align: center;
 }
-.wp-caption .wp-caption-text a,
-.wp-caption .wp-caption-text a:active
-.wp-caption .wp-caption-text a:visited {
+
+.wp-caption .wp-caption-text a {
 	color: inherit;
 	text-decoration: underline;
 }
+
 .wp-caption .wp-caption-text a:hover,
 .wp-caption .wp-caption-text a:focus {
 	text-decoration: none;
 }
-
-
 
 /*
 	--------------------------------------------------------------------------------
@@ -593,8 +686,8 @@ textarea {
 	padding: 0;
 	margin: 0;
 	height: 100vh;
-    white-space: nowrap;
-    overflow-x: hidden;
+	white-space: nowrap;
+	overflow-x: hidden;
 }
 
 .gallery:after {
@@ -602,6 +695,7 @@ textarea {
 	content: '';
 	display: table;
 }
+
 .gallery .gallery-item {
 	display: inline-block;
 	position: relative;
@@ -615,11 +709,34 @@ textarea {
 	transform: scale(1);
 	transition: all 0.666s cubic-bezier(0.2, 1.5, 0.5, 1);
 }
+
+@media only screen and (max-width: 480px) {
+
+	.gallery .gallery-item {
+		top: 25vh;
+		height: 50vh;
+		margin-right: 2em;
+		box-shadow: 0 1em 2em rgba(0,0,0,0.2);
+		transform: scale(1);
+		transition: all 0.666s cubic-bezier(0.2, 1.5, 0.5, 1);
+	}
+}
+
 .gallery .gallery-item:hover,
 .gallery .gallery-item:focus {
 	box-shadow: 0 2em 4em rgba(0,0,0,0.4);
 	transform: scale(1.1);
 }
+
+@media only screen and (max-width: 480px) {
+
+	.gallery .gallery-item:hover,
+	.gallery .gallery-item:focus {
+		box-shadow: 0 2em 4em rgba(0,0,0,0.4);
+		transform: scale(1.1);
+	}
+}
+
 .gallery .gallery-item .gallery-icon {
 	float: none;
 	clear: both;
@@ -642,6 +759,14 @@ textarea {
 	height: 50vh;
 	border-radius: 3px;
 }
+
+@media only screen and (max-width: 480px) {
+
+	.gallery .gallery-item .gallery-icon img {
+		height: 50vh;
+	}
+}
+
 .gallery .gallery-item .gallery-caption {
 	position: absolute;
 	display: block;
@@ -656,13 +781,14 @@ textarea {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	
+
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 
 	-webkit-transition: all ease 0.3s;
 	transition: all ease 0.3s;
 }
+
 .gallery .gallery-item:hover .gallery-caption,
 .gallery .gallery-item:focus .gallery-caption {
 	color: rgba(0,0,0,1);
@@ -672,93 +798,11 @@ textarea {
 	color: inherit;
 	text-decoration: underline;
 }
+
 .gallery .gallery-item .gallery-caption a:hover,
 .gallery .gallery-item .gallery-caption a:focus {
 	text-decoration: none;
 }
-
-.wp-smiley {
-	display: inline;
-	margin: 0 0.4em;
-	vertical-align: sub;
-}
-
-@media only screen and (max-width: 960px) {
-	.size-full.aligncenter,
-	.size-full.alignleft,
-	.size-full.alignright {
-		width: 220%;
-		margin-left: -60%;
-	}
-	.size-full.alignleft {
-		margin-left: -90%;
-	}
-	.size-full.alignright {
-		margin-right: -30%;
-	}
-	.size-full.align-offset {
-		margin-top: -64px;
-		margin-bottom: -64px;
-	}
-	.size-full.aligncenter.align-offset {
-		left: 0;
-	}
-	.size-full.alignleft.align-offset {
-		left: -30%;
-	}
-	.size-full.alignright.align-offset {
-		left: -15%;
-	}
-}
-
-
-@media only screen and (max-width: 480px) {
-	.alignnone,
-	.aligncenter,
-	.alignleft,
-	.alignright,
-	.size-thumbnail,
-	.size-small,
-	.size-medium,
-	.size-large,
-	.size-full {
-		float: none;
-		margin: 2em auto !important;
-		max-width: 100% !important;
-	}
-	.alignnone img,
-	.aligncenter img,
-	.alignleft img,
-	.alignright img {
-		margin: auto !important;
-	}
-	
-	
-	.gallery .gallery-item {
-		top: 25vh;
-		height: 50vh;
-		margin-right: 2em;
-		box-shadow: 0 1em 2em rgba(0,0,0,0.2);
-		transform: scale(1);
-		transition: all 0.666s cubic-bezier(0.2, 1.5, 0.5, 1);
-	}
-	.gallery .gallery-item:hover,
-	.gallery .gallery-item:focus {
-		box-shadow: 0 2em 4em rgba(0,0,0,0.4);
-		transform: scale(1.1);
-	}
-	.gallery .gallery-item:first-child {
-		margin-left: 25vw;
-	}
-	.gallery .gallery-item:last-child {
-		margin-right: 25vw;
-	}
-	.gallery .gallery-item .gallery-icon img {
-		height: 50vh;
-	}
-}
-
-
 
 /*
 	--------------------------------------------------------------------------------
@@ -766,45 +810,53 @@ textarea {
 	--------------------------------------------------------------------------------
 */
 
-.wpcf7-form {
+.wpcf7-form {}
 
-}
 .wpcf7-form:after {
 	clear: both;
 	content: '';
 	display: table;
 }
+
 .wpcf7-form .wpcf7-box {
 	margin: 0;
 	padding: 15px;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 .wpcf7-form .wpcf7-name {
 	float: left;
 	width: 50%;
 	padding-right: 15px;
 }
+
 @media only screen and (max-width: 640px) {
+
 	.wpcf7-form .wpcf7-name {
 		float: none;
 		width: auto;
 		padding-right: 15px;
 	}
 }
+
 .wpcf7-form .wpcf7-mail {
 	float: left;
 	width: 50%;
 	padding-left: 15px;
 }
+
 @media only screen and (max-width: 640px) {
+
 	.wpcf7-form .wpcf7-mail {
 		float: none;
 		width: auto;
 		padding-left: 15px;
 	}
 }
+
 .wpcf7-form .wpcf7-message {
 	clear: both;
 }
+
 .wpcf7-form .wpcf7-submit {}
