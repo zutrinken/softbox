@@ -5,6 +5,9 @@ load_theme_textdomain('softbox', TEMPLATEPATH .'/languages');
 add_action('wp_enqueue_scripts', 'softbox_scripts');
 function softbox_scripts() {
 	$template = get_template_directory_uri();
+	
+	wp_enqueue_style( 'softbox-style', get_stylesheet_uri() );
+	
 	wp_enqueue_script('modernizr', $template.'/js/libs/modernizr-2.6.2.min.js');
 
 	wp_enqueue_script('jquery');
