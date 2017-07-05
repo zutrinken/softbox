@@ -4,14 +4,13 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<title><?php bloginfo('name'); ?> <?php wp_title(' - ', true, 'left'); ?></title>
 
 		<?php wp_head(); ?>
 	</head>
 
 	<body <?php body_class(); ?>>
 		<header id="header">
-			<a class="blog-title" href="<?php bloginfo('url'); ?>">
+			<a class="blog-title" href="<?php echo esc_url( home_url() ); ?>">
 				<?php if(has_site_icon()) : ?>
 					<img class="blog-logo" src="<?php site_icon_url(); ?>" alt="<?php bloginfo('name'); ?>" />
 				<?php endif; ?>

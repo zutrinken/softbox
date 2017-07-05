@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	
+
 	<section id="index" class="horizontal">
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
@@ -19,5 +19,5 @@
 			<div class="swiper-pagination"></div>
 		</div>
 	</section>
-	
+
 <?php get_footer(); ?>

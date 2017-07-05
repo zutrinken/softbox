@@ -1,6 +1,12 @@
 <?php
 
-load_theme_textdomain('softbox', TEMPLATEPATH .'/languages');
+load_theme_textdomain('softbox', get_template_directory() .'/languages');
+
+add_theme_support( 'title-tag' );
+
+add_theme_support( 'automatic-feed-links' );
+
+if ( ! isset( $content_width ) ) $content_width = 720;
 
 add_action('wp_enqueue_scripts', 'softbox_scripts');
 function softbox_scripts() {
@@ -8,18 +14,18 @@ function softbox_scripts() {
 	
 	wp_enqueue_style( 'softbox-style', get_stylesheet_uri() );
 	
-	wp_enqueue_script('modernizr', $template.'/js/libs/modernizr-2.6.2.min.js');
+	wp_enqueue_script('softbox-modernizr', $template.'/js/libs/modernizr-2.6.2.min.js');
 
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('fitvids', $template.'/js/libs/jquery.fitvids.js', array(), null, false);
-	wp_enqueue_script('swiper', $template.'/js/libs/swiper.min.js', array(), null, false);
+	wp_enqueue_script('softbox-fitvids', $template.'/js/libs/jquery.fitvids.js', array(), null, false);
+	wp_enqueue_script('softbox-swiper', $template.'/js/libs/swiper.min.js', array(), null, false);
 	
 	if(is_single()) {
-		wp_enqueue_script('photoswipe', $template.'/js/libs/photoswipe.min.js', array(), null, false);
-		wp_enqueue_script('photoswipe-ui-default', $template.'/js/libs/photoswipe-ui-default.min.js', array(), null, false);
+		wp_enqueue_script('softbox-photoswipe', $template.'/js/libs/photoswipe.min.js', array(), null, false);
+		wp_enqueue_script('softbox-photoswipe-ui-default', $template.'/js/libs/photoswipe-ui-default.min.js', array(), null, false);
 	}
 
-	wp_enqueue_script('script', $template.'/js/script.js', array(), null, true);
+	wp_enqueue_script('softbox-script', $template.'/js/script.js', array(), null, true);
 }
 
 add_action('wp_enqueue_scripts', 'softbox_fonts');

@@ -109,14 +109,14 @@ textarea {
 .blog-title .blog-logo {
 	display: block;
 	float: left;
-	width: 2.5em;
+	width: 2em;
 	height: auto;
 	padding: 0;
-	margin: -0.25em 0.5em -0.25em -0.25em;
+	margin: 0 0.5em 0 0;
 }
 
 .blog-title .blog-name {
-	margin: 0;
+	margin: 0.1em 0 0;
 	padding: 0;
 	display: block;
 	font-size: 1.25em;
@@ -383,6 +383,8 @@ textarea {
 	margin-top: 2em;
 }
 
+#index .hentry.sticky {}
+
 #index .post-image {
 	position: relative;
 	z-index: 15;
@@ -459,6 +461,7 @@ textarea {
 	position: relative;
 }
 
+.error404 .hentry,
 .page .hentry {
 	padding-top: 8em;
 	padding-bottom: 4em;
@@ -466,7 +469,8 @@ textarea {
 
 .post-header {}
 
-.single .post-header {
+.single .post-header,
+.archive .post-header {
 	position: absolute;
 	top: 3em;
 	width: 100%;
@@ -859,3 +863,33 @@ textarea {
 }
 
 .wpcf7-form .wpcf7-submit {}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+        white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
