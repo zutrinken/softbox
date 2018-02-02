@@ -8,10 +8,10 @@ A responsive WordPress theme focusing on photos and galleries.
 
 ## Credits
 
-* Normalize
-* Swiper
-* Photoswipe
-* FitVids
+* [Normalize](https://github.com/necolas/normalize.css)
+* [Swiper](https://github.com/nolimits4web/Swiper)
+* [Photoswipe](https://github.com/dimsemenov/photoswipe)
+* [FitVids](https://github.com/davatron5000/FitVids.js)
 
 ## Copyright & License
 
