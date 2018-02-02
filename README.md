@@ -15,4 +15,4 @@ A responsive WordPress theme focusing on photos and galleries.
 
 ## Copyright & License
 
-Copyright (C) 2017 Peter Amende - Released under GNU General Public License v2 or later
+Copyright (C) 2017-2018 Peter Amende - Released under GNU General Public License v2 or later
